@@ -1,6 +1,6 @@
 # STECH VIAJES
 
-**Plataforma integral de movilidad urbana y transporte privado.**
+**Plataforma Mediadora de transporte Argentino.**
 
 ---
 
