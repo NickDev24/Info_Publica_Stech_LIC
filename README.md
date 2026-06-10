@@ -19,7 +19,7 @@ Yo, **Facundo Maximiliano Cercuetti** (NickDev24), declaro bajo juramento ser el
 | **Fecha de inicio del desarrollo** | 05 de mayo de 2026 |
 | **Fecha del primer deploy en producción** | 10 de junio de 2026 — 05:49 ART (GMT-3) |
 | **Infraestructura de producción** | AWS EC2 (Ubuntu) + Docker + Cloudflared Tunnel |
-| **Autor / Titular** | Nicolás Ezequiel Guzmán |
+| **Autor / Titular** | Facundo Maximiliano Cercuetti |
 | **Alias** | NickDev24 |
 | **Repositorio privado oficial** | [https://github.com/NickDev24/Stech-Viajes-Oficial](https://github.com/NickDev24/Stech-Viajes-Oficial) |
 
