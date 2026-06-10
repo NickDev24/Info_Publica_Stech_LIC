@@ -6,7 +6,7 @@
 
 ## Certificación de titularidad y derechos de autor
 
-Yo, **Nicolás Ezequiel Guzmán** (NickDev24), declaro bajo juramento ser el autor original, único y legítimo propietario de la totalidad del código fuente, diseño, arquitectura, algoritmos, base de datos, interfaz de usuario, marca, nombre comercial, identidad visual y cualquier otro activo intelectual comprendido en el proyecto **STECH VIAJES** (en adelante, "el Sistema").
+Yo, **Facundo Maximiliano Cercuetti** (NickDev24), declaro bajo juramento ser el autor original, único y legítimo propietario de la totalidad del código fuente, diseño, arquitectura, algoritmos, base de datos, interfaz de usuario, marca, nombre comercial, identidad visual y cualquier otro activo intelectual comprendido en el proyecto **STECH VIAJES** (en adelante, "el Sistema").
 
 ---
 
@@ -86,7 +86,7 @@ El código fuente completo, la documentación técnica, los esquemas de base de 
 
 ## Licencia
 
-**STECH VIAJES** © 2026 **Nicolás Ezequiel Guzmán (NickDev24). Todos los derechos reservados.**
+**STECH VIAJES** © 2026 **Facundo M. Cercuetti (NickDev24). Todos los derechos reservados.**
 
 Este proyecto **no** es de código abierto. El acceso al código fuente está restringido exclusivamente al titular y a personas expresamente autorizadas por él. Este repositorio público existe únicamente como acreditación de titularidad y antecedente de creación.
 
