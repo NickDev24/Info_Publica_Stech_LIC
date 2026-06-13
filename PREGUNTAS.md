@@ -142,3 +142,48 @@ La diferencia se ve en el bolsillo. El tuyo y el del conductor.
 STECH VIAJES — Viajamos bien, no viajamos mal.
 
 Buenos Aires, Salta, Argentina. Para todo el país. 🇦🇷
+
+---
+
+## 🆕 Novedades de la version 2.1.0 (Junio 2026)
+
+### 🏪 Cupones de descuento en comercios afiliados
+**¿Que son los comercios afiliados?**
+Son comercios locales que se asocian con STECH para ofrecer descuentos exclusivos a los conductores de la plataforma. Si sos conductor, podes acceder a promociones y descuentos en tu zona.
+
+**¿Como funciona?**
+1. El comercio crea un cupon de descuento desde su panel.
+2. El conductor ve el cupon en el carrusel de la pantalla principal.
+3. El conductor solicita el cupon con un toque.
+4. STECH genera un codigo QR unico para ese conductor y ese cupon.
+5. El conductor le muestra el QR al comercio (o le da el codigo numerico).
+6. El comercio escanea el QR con la camara o ingresa el codigo.
+7. El sistema valida automaticamente: stock, fecha de vigencia, usos maximos, limite por conductor.
+8. Si todo esta bien, el cupon se canjea al instante.
+
+**¿Que descuentos puedo esperar?**
+Depende de cada comercio. Algunos ofrecen porcentaje de descuento (% OFF), otros montos fijos en pesos ($ OFF). Cada cupon tiene sus propias condiciones.
+
+**¿Cuantos cupones puedo solicitar?**
+Depende de las reglas de cada cupon. Algunos tienen limite de usos totales, otros tienen limite por conductor. El sistema te avisa si ya no quedan disponibles.
+
+### 📡 Notificaciones en tiempo real
+**¿Como me entero de nuevos cupones?**
+No necesitas estar refrescando la app. Cuando un comercio crea, modifica o elimina un cupon, te llega una notificacion al instante. Tambien podes ver los cambios reflejados en el carrusel sin recargar.
+
+**¿Que es SSE?**
+Es la tecnologia que usamos para las actualizaciones en tiempo real. Funciona como un canal abierto entre el servidor y tu app. No necesita polling ni recargas manuales.
+
+### 📸 Verificacion diaria con selfie
+**¿Tengo que sacarme una foto todos los dias?**
+Si, para operar como conductor necesitas verificarte cada dia con una selfie. Es rapido, seguro, y ayuda a mantener la plataforma libre de suplantaciones de identidad.
+
+### 🗺️ Carrusel de comercios
+**¿Donde veo los comercios afiliados?**
+En la pantalla principal de la app de conductor, abajo del resumen de ganancias semanales. Vas a ver un carrusel con los comercios activos cerca de tu zona. Toca cualquier comercio para ver sus cupones disponibles.
+
+**¿Puedo ver la direccion del comercio?**
+Si, cada comercio muestra su direccion y podes abrir Google Maps directamente para que te lleve hasta ahi.
+
+### 📱¿Que se viene?
+Mira [ROADMAP.md](ROADMAP.md) para ver todo lo que estamos preparando.

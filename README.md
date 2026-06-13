@@ -1,12 +1,16 @@
 # STECH VIAJES
 
-**Plataforma Mediadora de transporte Argentino.**
+**Plataforma Mediadora de Transporte Argentino**
+
+[![Version](https://img.shields.io/badge/version-2.1.0-brightgreen)]()
+[![License](https://img.shields.io/badge/license-Propietaria-blue)]()
+[![Stack](https://img.shields.io/badge/stack-Next.js%2016%20%7C%20TypeScript%20%7C%20PostgreSQL%20%7C%20Redis-purple)]()
 
 ---
 
-## Certificación de titularidad y derechos de autor
+## Certificacion de titularidad y derechos de autor
 
-Yo, **Facundo Maximiliano Cercuetti** (NickDev24), declaro bajo juramento ser el autor original, único y legítimo propietario de la totalidad del código fuente, diseño, arquitectura, algoritmos, base de datos, interfaz de usuario, marca, nombre comercial, identidad visual y cualquier otro activo intelectual comprendido en el proyecto **STECH VIAJES** (en adelante, "el Sistema").
+Yo, **Facundo Maximiliano Cercuetti** (NickDev24), declaro bajo juramento ser el autor original, unico y legitimo propietario de la totalidad del codigo fuente, diseno, arquitectura, algoritmos, base de datos, interfaz de usuario, marca, nombre comercial, identidad visual y cualquier otro activo intelectual comprendido en el proyecto **STECH VIAJES** (en adelante, "el Sistema").
 
 ---
 
@@ -15,61 +19,99 @@ Yo, **Facundo Maximiliano Cercuetti** (NickDev24), declaro bajo juramento ser el
 | Atributo | Valor |
 |---|---|
 | **Nombre del proyecto** | STECH VIAJES |
-| **Versión** | 2.0.0 |
+| **Version** | 2.1.0 |
 | **Fecha de inicio del desarrollo** | 05 de mayo de 2026 |
-| **Fecha del primer deploy en producción** | 10 de junio de 2026 — 05:49 ART (GMT-3) |
-| **Infraestructura de producción** | AWS EC2 (Ubuntu) + Docker + Cloudflared Tunnel |
+| **Fecha del primer deploy en produccion** | 10 de junio de 2026 — 05:49 ART (GMT-3) |
+| **Infraestructura de produccion** | AWS EC2 (Ubuntu) + Docker + Cloudflared Tunnel |
 | **Autor / Titular** | Facundo Maximiliano Cercuetti |
 | **Alias** | NickDev24 |
 | **Repositorio privado oficial** | [https://github.com/NickDev24/Stech-Viajes-Oficial](https://github.com/NickDev24/Stech-Viajes-Oficial) |
 
 ---
 
-## Declaración de propiedad intelectual
+## Funcionalidades principales
 
-El Sistema **STECH VIAJES** constituye una obra original protegida por las leyes de propiedad intelectual de la **República Argentina** (Ley 11.723) y los tratados internacionales aplicables (Convenio de Berna, ADPIC, Tratado de la OMPI sobre Derecho de Autor).
+### Para clientes
+- Solicitud de viajes con precio fijo (sin tarifa dinamica)
+- Seguimiento en vivo del conductor en el mapa
+- Viajes compartidos (car pooling) — hasta 4 pasajeros
+- Wallet digital con recarga via Mercado Pago / Mobbex
+- Suscripcion semanal con descuento
+- Puntos de fidelidad y codigos promocionales
 
-Queda **total y absolutamente prohibido**:
+### Para conductores
+- Recepcion y gestion de solicitudes de viaje
+- Navegacion integrada paso a paso
+- Ganancias en tiempo real con comision justa
+- Verificacion de identidad con selfie + DNI
+- Notas internas privadas para el admin
+- Cancelacion segura en zona peligrosa con registro GPS
+- Recargos por demora y pago insuficiente
+- Carrusel de comercios afiliados con cupones de descuento
+- Notificaciones push en tiempo real (SSE + FCM)
 
-- La reproducción, copia, distribución, modificación, adaptación, traducción, ingeniería inversa, descompilación o extracción de cualquier componente del Sistema, sea total o parcial, por cualquier medio o procedimiento, sin la autorización expresa y por escrito del titular.
-- El uso, comercialización, licenciamiento, cesión o transferencia del Sistema o de cualquiera de sus partes a terceros sin el consentimiento explícito del titular.
-- La creación de obras derivadas basadas en el Sistema.
-- La eliminación, alteración u ocultación de cualquier marca, nombre, logotipo, aviso de derechos de autor o identificación de titularidad incorporada en el Sistema.
+### Para comercios afiliados
+- Creacion y gestion de cupones de descuento
+- Canje mediante codigo QR o codigo numerico
+- Control de stock, fechas de validez y limites de uso
+- Notificaciones en tiempo real a conductores
 
-El código fuente completo, la documentación técnica, los esquemas de base de datos, la lógica de negocio, los algoritmos de funcionamiento, las interfaces gráficas y cualquier otro componente del Sistema se encuentran bajo **reserva absoluta de confidencialidad** y no se divulgan en este repositorio público.
+### Para administradores
+- Panel de control con mapa en tiempo real
+- Gestion integral de usuarios, viajes y finanzas
+- Dashboard de analitica con metricas clave
+- Sistema de soporte con chat integrado
 
 ---
 
 ## Arquitectura del sistema (vista general)
 
-> **Nota:** Esta descripción contiene únicamente información de alto nivel. Los detalles de implementación, algoritmos propietarios, lógica de negocio y estructura interna forman parte del secreto comercial y no se revelan.
+> Esta descripcion contiene informacion de alto nivel. Los detalles de implementacion, algoritmos propietarios y logica de negocio forman parte del secreto comercial.
 
-| Componente | Descripción |
+| Componente | Descripcion |
 |---|---|
-| **Panel Administrativo** | Gestión integral de usuarios, viajes, finanzas, promociones, validaciones, soporte técnico, analítica y configuración del sistema. Incluye panel de control en tiempo real con mapas de seguimiento de unidades. |
-| **App Cliente (PWA)** | Plataforma para que los usuarios soliciten, gestionen y paguen viajes. Incluye selección de destino, seguimiento en vivo del conductor, historial de viajes, sistema de calificaciones, wallet digital y programas de suscripción semanal. |
-| **App Conductor (PWA)** | Plataforma para que los conductores reciban y gestionen solicitudes de viaje. Incluye mapas de navegación paso a paso, comunicación en tiempo real con pasajeros, registro de earnings diarios, verificación de identidad y panel de disponibilidad. |
-| **Motor de geolocalización** | Sistema de geocodificación y búsqueda de direcciones optimizado para el norte argentino (NOA), con soporte para alias locales, coordenadas, intersecciones y puntos de interés regionales. |
-| **Infraestructura en tiempo real** | Sistema de comunicación bidireccional mediante Server-Sent Events (SSE) y Redis Pub/Sub para actualizaciones instantáneas de estado de viajes, ubicación de conductores y mensajería. |
-| **Pasarela de pagos** | Integración con múltiples procesadores de pago (Mercado Pago, Mobbex) para procesar pagos con tarjeta, transferencias y recargas de wallet. |
-| **Infraestructura cloud** | Desplegado en AWS EC2 con Docker, respaldado por Supabase (PostgreSQL), Redis, Cloudflared Tunnel, y notificaciones push vía Firebase Cloud Messaging. |
+| **Panel Administrativo** | Gestion integral de usuarios, viajes, finanzas, promociones, validaciones, soporte tecnico, analitica y configuracion del sistema. Incluye panel de control en tiempo real con mapas de seguimiento de unidades. |
+| **App Cliente (PWA)** | Plataforma para que los usuarios soliciten, gestionen y paguen viajes. Incluye seleccion de destino, seguimiento en vivo del conductor, historial de viajes, sistema de calificaciones, wallet digital y programas de suscripcion semanal. |
+| **App Conductor (PWA)** | Plataforma para que los conductores reciban y gestionen solicitudes de viaje. Incluye mapas de navegacion paso a paso, comunicacion en tiempo real con pasajeros, registro de earnings diarios, verificacion de identidad y panel de disponibilidad. |
+| **Motor de geolocalizacion** | Sistema de geocodificacion y busqueda de direcciones optimizado para el norte argentino (NOA), con soporte para alias locales, coordenadas, intersecciones y puntos de interes regionales. |
+| **Infraestructura en tiempo real** | Sistema de comunicacion bidireccional mediante Server-Sent Events (SSE) y Redis Pub/Sub para actualizaciones instantaneas de estado de viajes, ubicacion de conductores y mensajeria. |
+| **Pasarela de pagos** | Integracion con multiples procesadores de pago (Mercado Pago, Mobbex) para procesar pagos con tarjeta, transferencias y recargas de wallet. |
+| **Infraestructura cloud** | Desplegado en AWS EC2 con Docker, respaldado por Supabase (PostgreSQL), Redis, Cloudflared Tunnel, y notificaciones push via Firebase Cloud Messaging. |
 
 ---
 
-## Tecnologías utilizadas
+## Tecnologias utilizadas
 
-| Tecnología | Versión | Propósito |
+| Tecnologia | Version | Proposito |
 |---|---|---|
-| Next.js | 16.2.4 | Framework principal (3 aplicaciones) |
-| TypeScript | ~5.8 | Lenguaje de programación |
+| Next.js | 16 | Framework principal (3 aplicaciones) |
+| TypeScript | ~5.8 | Lenguaje de programacion |
 | Prisma ORM | ~6.6 | Capa de base de datos |
 | PostgreSQL (Supabase) | — | Base de datos relacional |
-| Redis | 7.x | Caché, Pub/Sub, sesiones |
-| Docker | 29.x | Contenerización |
-| AWS EC2 | — | Servidor de producción |
-| Cloudflared Tunnel | — | Exposición segura de servicios |
+| Redis | 7.x | Cache, Pub/Sub, sesiones |
+| Docker | 29.x | Contenerizacion |
+| AWS EC2 | — | Servidor de produccion |
+| Cloudflared Tunnel | — | Exposicion segura de servicios |
 | Firebase Cloud Messaging | — | Notificaciones push |
+| Cloudinary | — | Gestion de imagenes |
 | Mercado Pago / Mobbex | — | Procesamiento de pagos |
+
+---
+
+## Documentacion
+
+| Documento | Descripcion |
+|---|---|
+| [CHANGELOG.md](CHANGELOG.md) | Historial de versiones |
+| [FEATURES.md](FEATURES.md) | Guia completa de funcionalidades |
+| [ROADMAP.md](ROADMAP.md) | Proximos pasos y vision del proyecto |
+| [SECURITY.md](SECURITY.md) | Politica de seguridad y reporte de vulnerabilidades |
+| [BRAND.md](BRAND.md) | Identidad de marca y guia de uso |
+| [TERMINOS_Y_CONDICIONES.md](TERMINOS_Y_CONDICIONES.md) | Terminos y condiciones de uso |
+| [POLITICA_DE_PRIVACIDAD.md](POLITICA_DE_PRIVACIDAD.md) | Politica de privacidad y proteccion de datos |
+| [COPYRIGHT.md](COPYRIGHT.md) | Certificacion de titularidad y derechos de autor |
+| [PREGUNTAS.md](PREGUNTAS.md) | Preguntas frecuentes |
+| [LICENSE](LICENSE) | Licencia |
 
 ---
 
@@ -77,7 +119,8 @@ El código fuente completo, la documentación técnica, los esquemas de base de 
 
 | Recurso | URL |
 |---|---|
-| **Repositorio privado (código fuente completo)** | [https://github.com/NickDev24/Stech-Viajes-Oficial](https://github.com/NickDev24/Stech-Viajes-Oficial) |
+| **Repositorio privado (codigo fuente completo)** | [https://github.com/NickDev24/Stech-Viajes-Oficial](https://github.com/NickDev24/Stech-Viajes-Oficial) |
+| **Repositorio publico (acreditacion)** | [https://github.com/NickDev24/Info_Publica_Stech_LIC](https://github.com/NickDev24/Info_Publica_Stech_LIC) |
 | **Panel Administrativo** | [https://stech-adm.online](https://stech-adm.online) |
 | **App Cliente** | [https://stech-app.site](https://stech-app.site) |
 | **App Conductor** | [https://stech-driver.shop](https://stech-driver.shop) |
@@ -86,12 +129,12 @@ El código fuente completo, la documentación técnica, los esquemas de base de 
 
 ## Licencia
 
-**STECH VIAJES** © 2026 **Facundo M. Cercuetti (NickDev24). Todos los derechos reservados.**
+**STECH VIAJES** (c) 2026 **Facundo M. Cercuetti (NickDev24). Todos los derechos reservados.**
 
-Este proyecto **no** es de código abierto. El acceso al código fuente está restringido exclusivamente al titular y a personas expresamente autorizadas por él. Este repositorio público existe únicamente como acreditación de titularidad y antecedente de creación.
+Este proyecto **no** es de codigo abierto. El acceso al codigo fuente esta restringido exclusivamente al titular y a personas expresamente autorizadas por el. Este repositorio publico existe unicamente como acreditacion de titularidad y antecedente de creacion.
 
-**Queda prohibida cualquier forma de reproducción, distribución, modificación o uso no autorizado del contenido de este repositorio y del proyecto al que hace referencia.**
+**Queda prohibida cualquier forma de reproduccion, distribucion, modificacion o uso no autorizado del contenido de este repositorio y del proyecto al que hace referencia.**
 
 ---
 
-*Documento generado el 10 de junio de 2026.*
+*Documento actualizado el 13 de junio de 2026. Version 2.1.0.*
